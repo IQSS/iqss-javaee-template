@@ -14,7 +14,7 @@ The aim of this git repo is to gather common components...
 
 ... into a testable framework using Vagrant: http://vagrantup.com 
 
-For now, the "hello1" demo app from the [Java EE 6 tutorial][] is deployed, but the idea is to have the app exercise ICEfaces and components as well.
+For now, the "hello1" demo app from the [Java EE 6 tutorial][] is deployed, but the idea is to have the app exercise ICEfaces and other components as well.
 
 [Java EE 6 tutorial]: http://docs.oracle.com/javaee/6/tutorial/doc/
 
@@ -26,7 +26,7 @@ First, we'll build app in NetBeans. Then, we'll deploy it locally and later to o
 
 In NetBeans, click Team, then Git, then Clone. 
 
-For the Repository URL: enter https://github.com/iqss/iqss-javaee-template.git (for read-only access, for now) and click Next.
+For the Repository URL: enter https://github.com/IQSS/iqss-javaee-template.git (for read-only access, for now) and click Next.
 
 Select "master" as the remote branch and click Next.
 
@@ -36,7 +36,9 @@ Clone Name should be "iqss-javaee-template"
 
 Click Finish.
 
-When you build and run the project, you should be able to access http://localhost:8080/hello1 on the GlassFish instance running locally on your development workstation.
+Open the "hello1" project.
+
+When you build and run the project, you should be able to access <http://localhost:8080/hello1> on the GlassFish instance running locally on your development workstation.
 
 ### Deploy the hello1 app to GlassFish running on Vagrant
 
@@ -47,4 +49,8 @@ Next, we'll deploy the same `hello1.war` to GlassFish running on a VM we'll crea
 
 `vagrant up` will take some time to complete because it has to download and install GlassFish on the VM.
 
-When `vagrant up` returns, "hello1" app should be accessible on the instance of GlassFish running on the VM at http://localhost:9000/hello1
+When `vagrant up` returns, "hello1" app should be accessible on the instance of GlassFish running on the VM at <http://localhost:9000/hello1>
+
+## Setting up Vagrant
+
+`vagrant up` above will fail, of course, if you haven't set up Vagrant yet. Vagrant is (currently) built on top of VirtualBox so you'll need to download it from <http://virtualbox.org> and Vagrant itself from <http://vagrantup.com>
