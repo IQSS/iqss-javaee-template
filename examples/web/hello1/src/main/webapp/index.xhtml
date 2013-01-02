@@ -3,28 +3,32 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ice="http://www.icesoft.com/icefaces/component"
+      >
     <h:head>
         <title>Facelets Hello Greeting</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:graphicImage url="#{resource['images:duke.waving.gif']}" alt="Duke waving his hand"/>
+        <ice:form>
+            <ice:graphicImage url="#{resource['images:duke.waving.gif']}" alt="Duke waving his hand"/>
             <h2>Hello, my name is Duke. What's yours?</h2>
-            <h:inputText id="username"
+            <ice:inputText id="username"
                          title="My name is: "
                          value="#{hello.name}"
                          required="true"
                          requiredMessage="Error: A name is required."
                          maxlength="25" />
             <p></p>
-            <h:commandButton id="submit" value="Submit" action="response">
-            </h:commandButton>
-            <h:commandButton id="reset" value="Reset" type="reset">
-            </h:commandButton>
-        </h:form>
+            <ice:commandButton id="submit" value="Submit" action="response">
+            </ice:commandButton>
+            <ice:commandButton id="reset" value="Reset" type="reset">
+            </ice:commandButton>
+        </ice:form>
         <div class="messagecolor">
-            <h:messages showSummary="true" 
+            <ice:messages showSummary="true" 
                         showDetail="false"
                         errorStyle="color: #d20005" 
                         infoStyle="color: blue"/>

@@ -42,5 +42,28 @@
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.icepush</groupId>
+            <artifactId>icepush</artifactId>
+            <version>2.0.2</version>     
+        </dependency>
+
+        <dependency>
+            <groupId>org.icefaces</groupId>
+            <artifactId>icefaces</artifactId>
+            <version>2.0.2</version>     
+        </dependency>
+        <dependency>
+            <groupId>org.icefaces</groupId>
+            <artifactId>icefaces-compat</artifactId>
+            <version>2.0.2</version>     
+        </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>ICEfaces Repo</id>
+            <name>ICEfaces Repo</name>
+            <url>http://anonsvn.icefaces.org/repo/maven2/releases/</url>
+        </repository>
+    </repositories>
 </project>
