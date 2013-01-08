@@ -9,6 +9,7 @@ class last {
     command => '/opt/glassfish/bin/asadmin deploy /examples/web/hello1/target/hello1.war',
     onlyif  => "/opt/glassfish/bin/asadmin list-applications | grep -c 'Nothing to list'",
     require => Exec['start-domain'],
+    timeout => 0,
   }
 
 }
