@@ -1,5 +1,4 @@
 ---
 layout: default
-title: index page
+title: Docs for iqss-javaee-template
 ---
-test
