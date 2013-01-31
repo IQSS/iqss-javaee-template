@@ -9,20 +9,20 @@
       xmlns:ice="http://www.icesoft.com/icefaces/component"
       >
     <h:head>
-        <title>Facelets Hello Greeting</title>
+        <title>Solr Search</title>
     </h:head>
     <h:body>
         <ice:form>
-            <ice:graphicImage url="#{resource['images:duke.waving.gif']}" alt="Duke waving his hand"/>
-            <h2>Hi! my name is Duke. What's yours?</h2>
+            <ice:graphicImage url="#{resource['images:solr.png']}" alt="Solr logo"/>
+            <h2>Let's try a search with Solr</h2>
             <ice:inputText id="username"
                            title="My name is: "
-                           value="#{hello.name}"
+                           value="#{solr.resultString}"
                            required="true"
-                           requiredMessage="Error: A name is required."
+                           requiredMessage="Error: A search term is required."
                            maxlength="25" />
             <p></p>
-            <ice:commandButton id="submit" value="Submit" action="response">
+            <ice:commandButton id="submit" value="Submit" action="results">
             </ice:commandButton>
             <ice:commandButton id="reset" value="Reset" type="reset">
             </ice:commandButton>
@@ -33,6 +33,6 @@
                           errorStyle="color: #d20005" 
                           infoStyle="color: blue"/>
         </div>
-        <p>Try a <a href="faces/solr.xhtml">Solr search</a></p>
+        <p>Return <a href="../">home</a></p>
     </h:body>
 </html>

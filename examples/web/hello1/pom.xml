@@ -59,6 +59,14 @@
             <artifactId>icefaces-compat</artifactId>
             <version>2.0.2</version>     
         </dependency>
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <!-- @todo: switch to 4.x -->
+            <version>3.6.2</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <repositories>
         <repository>
