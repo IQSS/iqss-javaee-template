@@ -1,6 +1,5 @@
 package javaeetutorial.web.hello1;
 
-
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -21,4 +20,3 @@ public class Hello {
         this.name = user_name;
     }
 }
-

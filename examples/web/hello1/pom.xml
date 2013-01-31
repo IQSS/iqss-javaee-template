@@ -8,7 +8,8 @@
     <packaging>war</packaging>
     <name>${project.artifactId}</name>
     <description>A simple project with war packaging that depends on JSF 2.1 and 
-        javaee 6, in that order.</description>
+        javaee 6, in that order.
+    </description>
     <url>http://jsf-spec.java.net/</url>
     <build>
         <finalName>${project.artifactId}</finalName>
@@ -23,7 +24,7 @@
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <configuration>
-                  <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
 
