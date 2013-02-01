@@ -8,6 +8,7 @@ import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.SolrServer;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import java.net.MalformedURLException;
 import java.util.logging.Logger;
@@ -46,13 +47,16 @@ public class Solr {
         QueryResponse rsp = server.query(query);
         SolrDocumentList docs = rsp.getResults();
         /**
-         * @todo show the actual results, not just the number of results
+         * @todo results look ugly... all on one line
          */
+        this.resultString = docs.size() + " results\n";
         dbgLog.info("Search term: " + search_term);
-        for (int i = 0; i < docs.size(); i++) {
-            dbgLog.info("document #" + i);
-            dbgLog.info(docs.get(i).toString());
+        for (SolrDocument doc : docs) {
+            dbgLog.info(doc.toString());
+            String name = doc.getFieldValue("name").toString();
+            String manu = doc.getFieldValue("manu").toString();
+            dbgLog.info(name + " (" + manu + ")");
+            this.resultString += name + " (" + manu + ")\n";
         }
-        this.resultString = docs.size() + " results";
     }
 }
