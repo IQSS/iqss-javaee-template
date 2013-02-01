@@ -62,8 +62,7 @@
         <dependency>
             <groupId>org.apache.solr</groupId>
             <artifactId>solr-solrj</artifactId>
-            <!-- @todo: switch to 4.x -->
-            <version>3.6.2</version>
+            <version>4.1.0</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
