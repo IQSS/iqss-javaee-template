@@ -10,11 +10,13 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 import java.net.MalformedURLException;
+import java.util.logging.Logger;
 
 @Named
 @RequestScoped
 public class Solr {
 
+    private static final Logger dbgLog = Logger.getLogger(Solr.class.getCanonicalName());
     private String resultString;
 
     public Solr() {
@@ -43,13 +45,14 @@ public class Solr {
         query.setQuery(search_term);
         QueryResponse rsp = server.query(query);
         SolrDocumentList docs = rsp.getResults();
-        this.resultString = docs.size() + " results";
         /**
          * @todo show the actual results, not just the number of results
          */
-        //this.resultString = results.size() + " results";
-        //for (int i = 0; i < results.size(); ++i) {
-        //    System.out.println(results.get(i));
-        //}
+        dbgLog.info("Search term: " + search_term);
+        for (int i = 0; i < docs.size(); i++) {
+            dbgLog.info("document #" + i);
+            dbgLog.info(docs.get(i).toString());
+        }
+        this.resultString = docs.size() + " results";
     }
 }
