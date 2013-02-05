@@ -9,20 +9,20 @@
       xmlns:ice="http://www.icesoft.com/icefaces/component"
       >
     <h:head>
-        <title>Facelets Hello Greeting</title>
+        <title>Solr Modify</title>
     </h:head>
     <h:body>
         <ice:form>
-            <ice:graphicImage url="#{resource['images:duke.waving.gif']}" alt="Duke waving his hand"/>
-            <h2>Hi! my name is Duke. What's yours?</h2>
-            <ice:inputText id="username"
-                           title="My name is: "
-                           value="#{hello.name}"
+            <ice:graphicImage url="#{resource['images:solr.png']}" alt="Solr logo"/>
+            <h2>Let's modify the Solr index</h2>
+            <ice:inputText id="input"
+                           title="My input is: "
+                           value="#{solr.addString}"
                            required="true"
-                           requiredMessage="Error: A name is required."
+                           requiredMessage="Error: some input is required."
                            maxlength="25" />
             <p></p>
-            <ice:commandButton id="submit" value="Submit" action="response">
+            <ice:commandButton id="submit" value="Submit" action="solr-modify2">
             </ice:commandButton>
             <ice:commandButton id="reset" value="Reset" type="reset">
             </ice:commandButton>

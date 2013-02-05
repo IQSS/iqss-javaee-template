@@ -9,14 +9,17 @@
       xmlns:ice="http://www.icesoft.com/icefaces/component"
       >
     <h:head>
-        <title>Results from a Solr search</title>
+        <title>Browse Solr documents</title>
     </h:head>
     <h:body>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{solr.setAllDocsString}" />
+        </f:metadata>
         <ice:form>
             <ice:graphicImage url="#{resource['images:solr.png']}" alt="Solr logo"/>
-            <h2>Found #{solr.resultString}</h2>
+            <h2>Found #{solr.allDocsString}</h2>
             <p></p>
-            <ice:commandButton id="back" value="Back" action="solr" />
         </ice:form>
+        <ui:include src="nav.xhtml"></ui:include>
     </h:body>
 </html>

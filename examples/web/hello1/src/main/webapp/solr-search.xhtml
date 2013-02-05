@@ -22,7 +22,7 @@
                            requiredMessage="Error: A search term is required."
                            maxlength="25" />
             <p></p>
-            <ice:commandButton id="submit" value="Submit" action="results">
+            <ice:commandButton id="submit" value="Submit" action="solr-results">
             </ice:commandButton>
             <ice:commandButton id="reset" value="Reset" type="reset">
             </ice:commandButton>
@@ -33,6 +33,6 @@
                           errorStyle="color: #d20005" 
                           infoStyle="color: blue"/>
         </div>
-        <p>Return <a href="../">home</a></p>
+        <ui:include src="nav.xhtml"></ui:include>
     </h:body>
 </html>
